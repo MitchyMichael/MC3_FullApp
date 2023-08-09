@@ -18,9 +18,11 @@ struct ARViewRepresentable: UIViewRepresentable {
         let arView = ARView(frame: .zero)
         
         if theItem == 1 {
-            CardFlip(arView)
+            CardFlip().startCardFlip(arView)
             print("Card Flip")
         }
+        
+        arView.enableTapGesture()
         
         return arView
     }
@@ -29,6 +31,31 @@ struct ARViewRepresentable: UIViewRepresentable {
         
     }
     
+}
+
+extension ARView {
+    func enableTapGesture(){
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:)))
+        self.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func handleTap(recognizer: UITapGestureRecognizer) {
+        let tapLocation = recognizer.location(in: self)
+        
+        if let card = self.entity(at: tapLocation) {
+            if card.transform.rotation.angle == .pi {›
+                var flipDownTransform = card.transform
+                flipDownTransform.rotation = simd_quatf(angle: 0, axis: [1, 0, 0])
+                card.move(to: flipDownTransform, relativeTo: card.parent, duration:0.25, timingFunction: .easeInOut)
+            } else {
+                var flipUpTransform = card.transform
+                flipUpTransform.rotation = simd_quatf(angle: .pi, axis: [1, 0, 0])
+                card.move(to: flipUpTransform, relativeTo: card.parent, duration:0.25, timingFunction: .easeInOut)
+            }
+        }
+        
+        
+    }
 }
 
 struct ARViewRepresentable_Previews: PreviewProvider {
