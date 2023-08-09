@@ -1,0 +1,409 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FCFE42E52A8224220068DAED /* MC3_FullAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFE42E42A8224220068DAED /* MC3_FullAppApp.swift */; };
+		FCFE42E72A8224220068DAED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFE42E62A8224220068DAED /* ContentView.swift */; };
+		FCFE42E92A8224230068DAED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCFE42E82A8224230068DAED /* Assets.xcassets */; };
+		FCFE42ED2A8224230068DAED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCFE42EC2A8224230068DAED /* Preview Assets.xcassets */; };
+		FCFE42F42A8226010068DAED /* ARDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFE42F32A8226010068DAED /* ARDelegate.swift */; };
+		FCFE42F62A8228E20068DAED /* ARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFE42F52A8228E20068DAED /* ARViewRepresentable.swift */; };
+		FCFE43152A822DD60068DAED /* gramophone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FCFE430D2A822DD50068DAED /* gramophone.usdz */; };
+		FCFE43162A822DD60068DAED /* tv_retro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FCFE430E2A822DD50068DAED /* tv_retro.usdz */; };
+		FCFE43172A822DD60068DAED /* toy_biplane_idle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FCFE430F2A822DD60068DAED /* toy_biplane_idle.usdz */; };
+		FCFE43182A822DD60068DAED /* sneaker_pegasustrail.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FCFE43102A822DD60068DAED /* sneaker_pegasustrail.usdz */; };
+		FCFE43192A822DD60068DAED /* flower_tulip.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FCFE43112A822DD60068DAED /* flower_tulip.usdz */; };
+		FCFE431A2A822DD60068DAED /* fender_stratocaster.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FCFE43122A822DD60068DAED /* fender_stratocaster.usdz */; };
+		FCFE431B2A822DD60068DAED /* toy_drummer_idle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FCFE43132A822DD60068DAED /* toy_drummer_idle.usdz */; };
+		FCFE431C2A822DD60068DAED /* pie_lemon_meringue.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FCFE43142A822DD60068DAED /* pie_lemon_meringue.usdz */; };
+		FCFE43202A8243DA0068DAED /* CardFlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFE431F2A8243DA0068DAED /* CardFlip.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FCFE42E12A8224220068DAED /* MC3_FullApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3_FullApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCFE42E42A8224220068DAED /* MC3_FullAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3_FullAppApp.swift; sourceTree = "<group>"; };
+		FCFE42E62A8224220068DAED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FCFE42E82A8224230068DAED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCFE42EA2A8224230068DAED /* MC3_FullApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3_FullApp.entitlements; sourceTree = "<group>"; };
+		FCFE42EC2A8224230068DAED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FCFE42F32A8226010068DAED /* ARDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDelegate.swift; sourceTree = "<group>"; };
+		FCFE42F52A8228E20068DAED /* ARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewRepresentable.swift; sourceTree = "<group>"; };
+		FCFE42F72A8229EE0068DAED /* MC3-FullApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MC3-FullApp-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FCFE430D2A822DD50068DAED /* gramophone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = gramophone.usdz; sourceTree = "<group>"; };
+		FCFE430E2A822DD50068DAED /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tv_retro.usdz; sourceTree = "<group>"; };
+		FCFE430F2A822DD60068DAED /* toy_biplane_idle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane_idle.usdz; sourceTree = "<group>"; };
+		FCFE43102A822DD60068DAED /* sneaker_pegasustrail.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sneaker_pegasustrail.usdz; sourceTree = "<group>"; };
+		FCFE43112A822DD60068DAED /* flower_tulip.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = flower_tulip.usdz; sourceTree = "<group>"; };
+		FCFE43122A822DD60068DAED /* fender_stratocaster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fender_stratocaster.usdz; sourceTree = "<group>"; };
+		FCFE43132A822DD60068DAED /* toy_drummer_idle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_drummer_idle.usdz; sourceTree = "<group>"; };
+		FCFE43142A822DD60068DAED /* pie_lemon_meringue.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = pie_lemon_meringue.usdz; sourceTree = "<group>"; };
+		FCFE431F2A8243DA0068DAED /* CardFlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlip.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCFE42DE2A8224220068DAED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FCFE42D82A8224220068DAED = {
+			isa = PBXGroup;
+			children = (
+				FCFE42E32A8224220068DAED /* MC3_FullApp */,
+				FCFE42E22A8224220068DAED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCFE42E22A8224220068DAED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCFE42E12A8224220068DAED /* MC3_FullApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCFE42E32A8224220068DAED /* MC3_FullApp */ = {
+			isa = PBXGroup;
+			children = (
+				FCFE42F72A8229EE0068DAED /* MC3-FullApp-Info.plist */,
+				FCFE42E42A8224220068DAED /* MC3_FullAppApp.swift */,
+				FCFE42E62A8224220068DAED /* ContentView.swift */,
+				FCFE42F32A8226010068DAED /* ARDelegate.swift */,
+				FCFE42F52A8228E20068DAED /* ARViewRepresentable.swift */,
+				FCFE431F2A8243DA0068DAED /* CardFlip.swift */,
+				FCFE42E82A8224230068DAED /* Assets.xcassets */,
+				FCFE43122A822DD60068DAED /* fender_stratocaster.usdz */,
+				FCFE43112A822DD60068DAED /* flower_tulip.usdz */,
+				FCFE430D2A822DD50068DAED /* gramophone.usdz */,
+				FCFE43142A822DD60068DAED /* pie_lemon_meringue.usdz */,
+				FCFE43102A822DD60068DAED /* sneaker_pegasustrail.usdz */,
+				FCFE430F2A822DD60068DAED /* toy_biplane_idle.usdz */,
+				FCFE43132A822DD60068DAED /* toy_drummer_idle.usdz */,
+				FCFE430E2A822DD50068DAED /* tv_retro.usdz */,
+				FCFE42EA2A8224230068DAED /* MC3_FullApp.entitlements */,
+				FCFE42EB2A8224230068DAED /* Preview Content */,
+			);
+			path = MC3_FullApp;
+			sourceTree = "<group>";
+		};
+		FCFE42EB2A8224230068DAED /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FCFE42EC2A8224230068DAED /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCFE42E02A8224220068DAED /* MC3_FullApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCFE42F02A8224230068DAED /* Build configuration list for PBXNativeTarget "MC3_FullApp" */;
+			buildPhases = (
+				FCFE42DD2A8224220068DAED /* Sources */,
+				FCFE42DE2A8224220068DAED /* Frameworks */,
+				FCFE42DF2A8224220068DAED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MC3_FullApp;
+			productName = MC3_FullApp;
+			productReference = FCFE42E12A8224220068DAED /* MC3_FullApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCFE42D92A8224220068DAED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					FCFE42E02A8224220068DAED = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = FCFE42DC2A8224220068DAED /* Build configuration list for PBXProject "MC3_FullApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCFE42D82A8224220068DAED;
+			productRefGroup = FCFE42E22A8224220068DAED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCFE42E02A8224220068DAED /* MC3_FullApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCFE42DF2A8224220068DAED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCFE42ED2A8224230068DAED /* Preview Assets.xcassets in Resources */,
+				FCFE43172A822DD60068DAED /* toy_biplane_idle.usdz in Resources */,
+				FCFE431B2A822DD60068DAED /* toy_drummer_idle.usdz in Resources */,
+				FCFE43192A822DD60068DAED /* flower_tulip.usdz in Resources */,
+				FCFE431C2A822DD60068DAED /* pie_lemon_meringue.usdz in Resources */,
+				FCFE43152A822DD60068DAED /* gramophone.usdz in Resources */,
+				FCFE43182A822DD60068DAED /* sneaker_pegasustrail.usdz in Resources */,
+				FCFE43162A822DD60068DAED /* tv_retro.usdz in Resources */,
+				FCFE431A2A822DD60068DAED /* fender_stratocaster.usdz in Resources */,
+				FCFE42E92A8224230068DAED /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCFE42DD2A8224220068DAED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCFE42E72A8224220068DAED /* ContentView.swift in Sources */,
+				FCFE42F42A8226010068DAED /* ARDelegate.swift in Sources */,
+				FCFE42F62A8228E20068DAED /* ARViewRepresentable.swift in Sources */,
+				FCFE42E52A8224220068DAED /* MC3_FullAppApp.swift in Sources */,
+				FCFE43202A8243DA0068DAED /* CardFlip.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FCFE42EE2A8224230068DAED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCFE42EF2A8224230068DAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		FCFE42F12A8224230068DAED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MC3_FullApp/MC3_FullApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MC3_FullApp/Preview Content\"";
+				DEVELOPMENT_TEAM = X936JFD293;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MC3-FullApp-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please turn on camera to use this app.";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Michael.MC3-FullApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCFE42F22A8224230068DAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MC3_FullApp/MC3_FullApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MC3_FullApp/Preview Content\"";
+				DEVELOPMENT_TEAM = X936JFD293;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MC3-FullApp-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please turn on camera to use this app.";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Michael.MC3-FullApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCFE42DC2A8224220068DAED /* Build configuration list for PBXProject "MC3_FullApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCFE42EE2A8224230068DAED /* Debug */,
+				FCFE42EF2A8224230068DAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCFE42F02A8224230068DAED /* Build configuration list for PBXNativeTarget "MC3_FullApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCFE42F12A8224230068DAED /* Debug */,
+				FCFE42F22A8224230068DAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCFE42D92A8224220068DAED /* Project object */;
+}
