@@ -11,6 +11,8 @@ import RealityKit
 import Combine
 
 class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
+    var loadedModels: [ModelEntity] = []
+    
     func startCardFlip(_ arView: ARView) {
         let anchor = AnchorEntity(plane: .horizontal, minimumBounds: [0.2, 0.2])
         arView.scene.addAnchor(anchor)
@@ -42,6 +44,9 @@ class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
         
         var cancellable : AnyCancellable? = nil
         
+        var loadedModels: [ModelEntity] = []
+        var modelNames: [String] = []
+        
         cancellable = ModelEntity.loadModelAsync(named: "sneaker_pegasustrail")
             .append(ModelEntity.loadModelAsync(named: "toy_biplane_idle"))
             .append(ModelEntity.loadModelAsync(named: "toy_drummer_idle"))
@@ -64,6 +69,9 @@ class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
                     }
                 }
                 objects.shuffle()
+                print("Objects: \(objects.description)")
+                
+                loadedModels = objects
                 
                 for (index, object) in objects.enumerated() {
                     cards[index].addChild(object)
@@ -71,7 +79,17 @@ class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
                 }
                 
                 cancellable?.cancel()
+                
+                for modelEntity in loadedModels {
+                    modelNames.append(modelEntity.name)
+                }
+                print("Model Names: \(modelNames)")
             })
+        
+       
+        
+        
+        
     }
 }
 

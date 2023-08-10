@@ -16,6 +16,7 @@ struct ContentView: View {
                 Text("Apple Feature Apps")
                     .font(.title)
                     .padding(.bottom)
+                
                 NavigationLink(destination: {
                     ARViewRepresentable(arDelegate: arDelegate, theItem: 1) // Card Flip Game
                 }, label: {

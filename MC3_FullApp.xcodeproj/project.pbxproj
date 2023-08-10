@@ -56,6 +56,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC639D812A83840B00C6F17E /* 3D Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCFE43122A822DD60068DAED /* fender_stratocaster.usdz */,
+				FCFE43112A822DD60068DAED /* flower_tulip.usdz */,
+				FCFE430D2A822DD50068DAED /* gramophone.usdz */,
+				FCFE43142A822DD60068DAED /* pie_lemon_meringue.usdz */,
+				FCFE43102A822DD60068DAED /* sneaker_pegasustrail.usdz */,
+				FCFE430F2A822DD60068DAED /* toy_biplane_idle.usdz */,
+				FCFE43132A822DD60068DAED /* toy_drummer_idle.usdz */,
+				FCFE430E2A822DD50068DAED /* tv_retro.usdz */,
+			);
+			path = "3D Models";
+			sourceTree = "<group>";
+		};
 		FCFE42D82A8224220068DAED = {
 			isa = PBXGroup;
 			children = (
@@ -81,15 +96,8 @@
 				FCFE42F32A8226010068DAED /* ARDelegate.swift */,
 				FCFE42F52A8228E20068DAED /* ARViewRepresentable.swift */,
 				FCFE431F2A8243DA0068DAED /* CardFlip.swift */,
+				FC639D812A83840B00C6F17E /* 3D Models */,
 				FCFE42E82A8224230068DAED /* Assets.xcassets */,
-				FCFE43122A822DD60068DAED /* fender_stratocaster.usdz */,
-				FCFE43112A822DD60068DAED /* flower_tulip.usdz */,
-				FCFE430D2A822DD50068DAED /* gramophone.usdz */,
-				FCFE43142A822DD60068DAED /* pie_lemon_meringue.usdz */,
-				FCFE43102A822DD60068DAED /* sneaker_pegasustrail.usdz */,
-				FCFE430F2A822DD60068DAED /* toy_biplane_idle.usdz */,
-				FCFE43132A822DD60068DAED /* toy_drummer_idle.usdz */,
-				FCFE430E2A822DD50068DAED /* tv_retro.usdz */,
 				FCFE42EA2A8224230068DAED /* MC3_FullApp.entitlements */,
 				FCFE42EB2A8224230068DAED /* Preview Content */,
 			);
