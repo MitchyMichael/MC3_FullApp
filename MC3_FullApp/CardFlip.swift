@@ -12,6 +12,8 @@ import Combine
 
 class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
     var loadedModels: [ModelEntity] = []
+    var modelNameItems: [String] = ["sneaker_pegasustrail", "toy_biplane_idle", "toy_drummer_idle", "pie_lemon_meringue", "tv_retro", "fender_stratocaster", "gramophone", "flower_tulip"]
+    var objectId: [String] = [String]()
     
     func startCardFlip(_ arView: ARView) {
         let anchor = AnchorEntity(plane: .horizontal, minimumBounds: [0.2, 0.2])
@@ -47,31 +49,41 @@ class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
         var loadedModels: [ModelEntity] = []
         var modelNames: [String] = []
         
-        cancellable = ModelEntity.loadModelAsync(named: "sneaker_pegasustrail")
-            .append(ModelEntity.loadModelAsync(named: "toy_biplane_idle"))
-            .append(ModelEntity.loadModelAsync(named: "toy_drummer_idle"))
-            .append(ModelEntity.loadModelAsync(named: "pie_lemon_meringue"))
-            .append(ModelEntity.loadModelAsync(named: "tv_retro"))
-            .append(ModelEntity.loadModelAsync(named: "fender_stratocaster"))
-            .append(ModelEntity.loadModelAsync(named: "gramophone"))
-            .append(ModelEntity.loadModelAsync(named: "flower_tulip"))
+        cancellable = ModelEntity.loadModelAsync(named: modelNameItems[0])
+            .append(ModelEntity.loadModelAsync(named: modelNameItems[1]))
+            .append(ModelEntity.loadModelAsync(named: modelNameItems[2]))
+            .append(ModelEntity.loadModelAsync(named: modelNameItems[3]))
+            .append(ModelEntity.loadModelAsync(named: modelNameItems[4]))
+            .append(ModelEntity.loadModelAsync(named: modelNameItems[5]))
+            .append(ModelEntity.loadModelAsync(named: modelNameItems[6]))
+            .append(ModelEntity.loadModelAsync(named: modelNameItems[7]))
             .collect()
             .sink(receiveCompletion: { error in
                 print ("Error: \(error)")
                 cancellable?.cancel()
             }, receiveValue: { entities in
                 var objects : [ModelEntity] = []
+                var counter = 0
                 for entity in entities {
-                    entity.setScale(SIMD3<Float>(0.002, 0.002, 0.002), relativeTo: anchor)
+                    entity.setScale(SIMD3<Float>(0.001, 0.001, 0.001), relativeTo: anchor)
                     entity.generateCollisionShapes(recursive: true)
+                    entity.name = "\(counter)"
+                    counter += 1
                     for _ in 1...2 {
                         objects.append(entity.clone(recursive: true))
                     }
+                    print("Objects: \(cancellable)")
                 }
                 objects.shuffle()
-                print("Objects: \(objects.description)")
-                
+               
                 loadedModels = objects
+                
+                for object in objects {
+                    print("Object Name:\(object.name)")
+                    self.objectId.append(object.name)
+                    
+                }
+//                print(objectId)
                 
                 for (index, object) in objects.enumerated() {
                     cards[index].addChild(object)
@@ -83,13 +95,9 @@ class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
                 for modelEntity in loadedModels {
                     modelNames.append(modelEntity.name)
                 }
-                print("Model Names: \(modelNames)")
+                print("Model Names: \(loadedModels[0])")
+                
             })
-        
-       
-        
-        
-        
     }
 }
 
