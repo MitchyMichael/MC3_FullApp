@@ -13,8 +13,8 @@ import Combine
 struct ARViewRepresentable: UIViewRepresentable {
     let arDelegate: ARDelegate
     var theItem: Int
-    
     var cardFlip = CardFlip()
+    
     
     func makeUIView(context: Context) -> some UIView {
         let arView = ARView(frame: .zero)
@@ -24,6 +24,11 @@ struct ARViewRepresentable: UIViewRepresentable {
             arView.enableTapGesture()
             print("Card Flip")
             print("DEBUG: \(cardFlip.loadedModels)")
+        } else if theItem == 2 {
+            var robotEntity: Entity?
+            robotEntity = try! Entity.load(named: "03")
+            arView.enableTapGestureRobot()
+            
         }
         
         return arView
@@ -36,9 +41,45 @@ struct ARViewRepresentable: UIViewRepresentable {
 }
 
 extension ARView {
+    func enableTapGestureRobot() {
+        let tapGestureRecognizerRobot = UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:)))
+        self.addGestureRecognizer(tapGestureRecognizerRobot)
+    }
+    
     func enableTapGesture(){
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:)))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapRobot(recognizer:)))
         self.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func placeObject(object: Entity,position: SIMD3<Float>){
+        
+        //1. Create anchor at 3D pos
+        let objectAnchor = AnchorEntity(world: position)
+        
+        //2. Tie Model To Anchor
+        objectAnchor.addChild(object)
+        
+        //3. Anchor to scene
+        self.scene.addAnchor(objectAnchor)
+    }
+    
+    @objc func handleTapRobot(recognizer: UITapGestureRecognizer){
+        var robotEntity: Entity?
+        //Tap Location
+        let tapLocation = recognizer.location(in: self)
+        
+        //Raycasting (2D->3D)
+        let results = self.raycast(from: tapLocation, allowing: .estimatedPlane, alignment: .horizontal)
+        
+        //If Plane Detected
+        if let firstResult = results.first{
+            
+            //3D position(x,y,z)
+            let worldPos = simd_make_float3(firstResult.worldTransform.columns.3)
+            
+            //Place Object
+            placeObject(object: robotEntity!, position: worldPos)
+        }
     }
     
     @objc func handleTap(recognizer: UITapGestureRecognizer) {

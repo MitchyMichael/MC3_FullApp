@@ -22,6 +22,14 @@ struct ContentView: View {
                 }, label: {
                     Text("Card Flip Feature")
                 })
+                .padding(.bottom)
+                
+                NavigationLink(destination: {
+                    ARViewRepresentable(arDelegate: arDelegate, theItem: 2) // Card Flip Game
+                }, label: {
+                    Text("Robot Feature")
+                })
+                .padding(.bottom)
             }
             .padding()
         }

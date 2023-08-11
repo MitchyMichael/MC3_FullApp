@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA83D7812A863E1400206B5F /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83D7802A863E1400206B5F /* Robot.swift */; };
+		FA83D7832A863EE100206B5F /* 03.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FA83D7822A863EE100206B5F /* 03.usdz */; };
 		FCFE42E52A8224220068DAED /* MC3_FullAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFE42E42A8224220068DAED /* MC3_FullAppApp.swift */; };
 		FCFE42E72A8224220068DAED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFE42E62A8224220068DAED /* ContentView.swift */; };
 		FCFE42E92A8224230068DAED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCFE42E82A8224230068DAED /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA83D7802A863E1400206B5F /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
+		FA83D7822A863EE100206B5F /* 03.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 03.usdz; sourceTree = "<group>"; };
 		FCFE42E12A8224220068DAED /* MC3_FullApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3_FullApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFE42E42A8224220068DAED /* MC3_FullAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3_FullAppApp.swift; sourceTree = "<group>"; };
 		FCFE42E62A8224220068DAED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 		FC639D812A83840B00C6F17E /* 3D Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA83D7822A863EE100206B5F /* 03.usdz */,
 				FCFE43122A822DD60068DAED /* fender_stratocaster.usdz */,
 				FCFE43112A822DD60068DAED /* flower_tulip.usdz */,
 				FCFE430D2A822DD50068DAED /* gramophone.usdz */,
@@ -96,6 +101,7 @@
 				FCFE42F32A8226010068DAED /* ARDelegate.swift */,
 				FCFE42F52A8228E20068DAED /* ARViewRepresentable.swift */,
 				FCFE431F2A8243DA0068DAED /* CardFlip.swift */,
+				FA83D7802A863E1400206B5F /* Robot.swift */,
 				FC639D812A83840B00C6F17E /* 3D Models */,
 				FCFE42E82A8224230068DAED /* Assets.xcassets */,
 				FCFE42EA2A8224230068DAED /* MC3_FullApp.entitlements */,
@@ -180,6 +186,7 @@
 				FCFE43162A822DD60068DAED /* tv_retro.usdz in Resources */,
 				FCFE431A2A822DD60068DAED /* fender_stratocaster.usdz in Resources */,
 				FCFE42E92A8224230068DAED /* Assets.xcassets in Resources */,
+				FA83D7832A863EE100206B5F /* 03.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +201,7 @@
 				FCFE42F42A8226010068DAED /* ARDelegate.swift in Sources */,
 				FCFE42F62A8228E20068DAED /* ARViewRepresentable.swift in Sources */,
 				FCFE42E52A8224220068DAED /* MC3_FullAppApp.swift in Sources */,
+				FA83D7812A863E1400206B5F /* Robot.swift in Sources */,
 				FCFE43202A8243DA0068DAED /* CardFlip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,7 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC3_FullApp/Preview Content\"";
-				DEVELOPMENT_TEAM = X936JFD293;
+				DEVELOPMENT_TEAM = SHFM5974XN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
