@@ -12,13 +12,13 @@ import Combine
 
 struct ARViewRepresentable: UIViewRepresentable {
     let arDelegate: ARDelegate
+    var cardFlip = CardFlip()
     var theItem: Int
     
-    var cardFlip = CardFlip()
-    
-    func makeUIView(context: Context) -> some UIView {
-        let arView = ARView(frame: .zero)
+    func makeUIView(context: Context) -> some SapimanARView {
+        let arView = SapimanARView(frame: .zero)
         
+        // Start card flip game
         if theItem == 1 {
             cardFlip.startCardFlip(arView)
             arView.enableTapGesture()
@@ -32,53 +32,79 @@ struct ARViewRepresentable: UIViewRepresentable {
     func updateUIView(_ uiView: UIViewType, context: Context) {
         
     }
-    
 }
 
-extension ARView {
+// Counter for cards
+class SapimanARView: ARView {
+    var counter = 0
+}
+
+extension SapimanARView {
+    // Enable tap gesture for cards
     func enableTapGesture(){
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:)))
         self.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    @objc func handleTap(recognizer: UITapGestureRecognizer) {
+    // Tap gesture for cards
+    @objc func handleTap(recognizer: UITapGestureRecognizer){
         let tapLocation = recognizer.location(in: self)
-        var tapPosition = 0
         if let card = self.entity(at: tapLocation) {
             
             if card.name == ""{
-                print("Card Name:\(card.children.first!.name)")
+                parentCardFlip()
+            } else {
+                childCardFlip()
+            }
+            
+            func parentCardFlip() {
                 if card.transform.rotation.angle == .pi {
-                    var flipDownTransform = card.transform
-                    flipDownTransform.rotation = simd_quatf(angle: 0, axis: [1, 0, 0])
-                    card.move(to: flipDownTransform, relativeTo: card.parent, duration:0.25, timingFunction: .easeInOut)
-                    print("Up")
+                    
+                    // Function that only 2 cards can be open
+                    if counter < 2 {
+                        print("Card Name:\(card.children.first!.name)")
+                        var flipDownTransform = card.transform
+                        flipDownTransform.rotation = simd_quatf(angle: 0, axis: [1, 0, 0])
+                        card.move(to: flipDownTransform, relativeTo: card.parent, duration:0.25, timingFunction: .easeInOut)
+                        print("Up")
+                        counter = counter + 1
+                    } else if counter <= 0 {
+                        counter = 0
+                    }
                 } else {
-//                    print("Card Name:\(card.name)")
                     var flipUpTransform = card.transform
                     flipUpTransform.rotation = simd_quatf(angle: .pi, axis: [1, 0, 0])
                     card.move(to: flipUpTransform, relativeTo: card.parent, duration:0.25, timingFunction: .easeInOut)
+                    counter = counter - 1
                     print("Down")
                 }
-            } else {
+            }
+            
+            func childCardFlip() {
                 if let parent = card.parent{
                     if parent.transform.rotation.angle == .pi {
-//                        print("Card Name:\(card.name)")
-                        var flipDownTransform = parent.transform
-                        flipDownTransform.rotation = simd_quatf(angle: 0, axis: [1, 0, 0])
-                        parent.move(to: flipDownTransform, relativeTo: parent.parent, duration:0.25, timingFunction: .easeInOut)
-                        print("Up")
+                        
+                        // Function that only 2 cards can be open
+                        if counter < 2 {
+                            var flipDownTransform = parent.transform
+                            flipDownTransform.rotation = simd_quatf(angle: 0, axis: [1, 0, 0])
+                            parent.move(to: flipDownTransform, relativeTo: parent.parent, duration:0.25, timingFunction: .easeInOut)
+                            print("Up")
+                            counter = counter + 1
+                        } else if counter <= 0 {
+                            counter = 0
+                        }
                     } else {
-//                        print("Card Name:\(card.name)")
                         var flipUpTransform = parent.transform
                         flipUpTransform.rotation = simd_quatf(angle: .pi, axis: [1, 0, 0])
                         parent.move(to: flipUpTransform, relativeTo: parent.parent, duration:0.25, timingFunction: .easeInOut)
                         print("Down")
+                        counter = counter - 1
                     }
                 }
             }
-            
         }
+        print("Counter: \(counter)")
     }
 }
 

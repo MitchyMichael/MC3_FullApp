@@ -81,9 +81,7 @@ class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
                 for object in objects {
                     print("Object Name:\(object.name)")
                     self.objectId.append(object.name)
-                    
                 }
-//                print(objectId)
                 
                 for (index, object) in objects.enumerated() {
                     cards[index].addChild(object)
