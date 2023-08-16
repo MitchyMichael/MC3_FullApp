@@ -18,10 +18,18 @@ struct ContentView: View {
                     .padding(.bottom)
                 
                 NavigationLink(destination: {
-                    ARViewRepresentable(arDelegate: arDelegate, theItem: 1) // Card Flip Game
+                    // Card Flip Game
+                    ARViewRepresentable(arDelegate: arDelegate, theItem: 1)
                 }, label: {
                     Text("Card Flip Feature")
                 })
+                .padding(.bottom)
+                
+                Button {
+//                    MultipeerSetup(arView: SapimanARView)
+                } label: {
+                    Text("Check Multipeer")
+                }
             }
             .padding()
         }

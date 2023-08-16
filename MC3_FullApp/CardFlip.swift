@@ -9,8 +9,11 @@ import ARKit
 import SwiftUI
 import RealityKit
 import Combine
+import MultipeerSession
 
 class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
+    @objc var arView = SapimanARView(frame: .zero)
+    
     var loadedModels: [ModelEntity] = []
     var modelNameItems: [String] = ["sneaker_pegasustrail", "toy_biplane_idle", "toy_drummer_idle", "pie_lemon_meringue", "tv_retro", "fender_stratocaster", "gramophone", "flower_tulip"]
     var objectId: [String] = [String]()
@@ -18,6 +21,8 @@ class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
     func startCardFlip(_ arView: ARView) {
         let anchor = AnchorEntity(plane: .horizontal, minimumBounds: [0.2, 0.2])
         arView.scene.addAnchor(anchor)
+        
+        self.arView = arView as! SapimanARView
         
         var cards: [Entity] = []
         for _ in 1...16 {
@@ -97,5 +102,10 @@ class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
                 
             })
     }
+    
+    
 }
+
+
+
 

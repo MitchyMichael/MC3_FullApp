@@ -13,12 +13,17 @@ class ARDelegate: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
     private var arView: ARView?
     let configuration = ARWorldTrackingConfiguration()
     
-    func setARView(_ arView: ARView) {
-        guard ARWorldTrackingConfiguration.isSupported else { return }
+    func setARView(_ arView: ARView) -> ARView?{
+        guard ARWorldTrackingConfiguration.isSupported else { return nil }
         self.arView = arView
         configuration.planeDetection = [.horizontal, .vertical]
+        configuration.environmentTexturing = .automatic
+        
+        configuration.isCollaborationEnabled = true
         
         arView.session.run(configuration)
+        
+        return arView
     }
     
 }

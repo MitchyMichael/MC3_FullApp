@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FCB477932A8A144600264847 /* MultipeerSession in Frameworks */ = {isa = PBXBuildFile; productRef = FCB477922A8A144600264847 /* MultipeerSession */; };
+		FCB477952A8CBD9F00264847 /* MultipeerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB477942A8CBD9F00264847 /* MultipeerSetup.swift */; };
 		FCFE42E52A8224220068DAED /* MC3_FullAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFE42E42A8224220068DAED /* MC3_FullAppApp.swift */; };
 		FCFE42E72A8224220068DAED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFE42E62A8224220068DAED /* ContentView.swift */; };
 		FCFE42E92A8224230068DAED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCFE42E82A8224230068DAED /* Assets.xcassets */; };
@@ -25,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FCB477942A8CBD9F00264847 /* MultipeerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerSetup.swift; sourceTree = "<group>"; };
 		FCFE42E12A8224220068DAED /* MC3_FullApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3_FullApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFE42E42A8224220068DAED /* MC3_FullAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3_FullAppApp.swift; sourceTree = "<group>"; };
 		FCFE42E62A8224220068DAED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCB477932A8A144600264847 /* MultipeerSession in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,7 @@
 				FCFE42F32A8226010068DAED /* ARDelegate.swift */,
 				FCFE42F52A8228E20068DAED /* ARViewRepresentable.swift */,
 				FCFE431F2A8243DA0068DAED /* CardFlip.swift */,
+				FCB477942A8CBD9F00264847 /* MultipeerSetup.swift */,
 				FC639D812A83840B00C6F17E /* 3D Models */,
 				FCFE42E82A8224230068DAED /* Assets.xcassets */,
 				FCFE42EA2A8224230068DAED /* MC3_FullApp.entitlements */,
@@ -128,6 +133,9 @@
 			dependencies = (
 			);
 			name = MC3_FullApp;
+			packageProductDependencies = (
+				FCB477922A8A144600264847 /* MultipeerSession */,
+			);
 			productName = MC3_FullApp;
 			productReference = FCFE42E12A8224220068DAED /* MC3_FullApp.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +164,9 @@
 				Base,
 			);
 			mainGroup = FCFE42D82A8224220068DAED;
+			packageReferences = (
+				FCB477912A8A144600264847 /* XCRemoteSwiftPackageReference "multipeer-session" */,
+			);
 			productRefGroup = FCFE42E22A8224220068DAED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -191,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCFE42E72A8224220068DAED /* ContentView.swift in Sources */,
+				FCB477952A8CBD9F00264847 /* MultipeerSetup.swift in Sources */,
 				FCFE42F42A8226010068DAED /* ARDelegate.swift in Sources */,
 				FCFE42F62A8228E20068DAED /* ARViewRepresentable.swift in Sources */,
 				FCFE42E52A8224220068DAED /* MC3_FullAppApp.swift in Sources */,
@@ -412,6 +424,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FCB477912A8A144600264847 /* XCRemoteSwiftPackageReference "multipeer-session" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RyanKopinskyLLC/multipeer-session";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FCB477922A8A144600264847 /* MultipeerSession */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCB477912A8A144600264847 /* XCRemoteSwiftPackageReference "multipeer-session" */;
+			productName = MultipeerSession;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FCFE42D92A8224220068DAED /* Project object */;
 }

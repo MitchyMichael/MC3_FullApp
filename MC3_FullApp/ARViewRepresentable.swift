@@ -10,18 +10,25 @@ import SwiftUI
 import RealityKit
 import Combine
 
+
 struct ARViewRepresentable: UIViewRepresentable {
-    let arDelegate: ARDelegate
-    var cardFlip = CardFlip()
+    @ObservedObject var arDelegate: ARDelegate
+    @StateObject var cardFlip = CardFlip()
     var theItem: Int
     
     func makeUIView(context: Context) -> some SapimanARView {
         let arView = SapimanARView(frame: .zero)
         
+        arDelegate.setARView(arView)
+        
         // Start card flip game
         if theItem == 1 {
             cardFlip.startCardFlip(arView)
             arView.enableTapGesture()
+            
+            MultipeerSetup(arView: arView).setupMultipeerSession()
+            arView.session.delegate
+            
             print("Card Flip")
             print("DEBUG: \(cardFlip.loadedModels)")
         }
@@ -32,12 +39,17 @@ struct ARViewRepresentable: UIViewRepresentable {
     func updateUIView(_ uiView: UIViewType, context: Context) {
         
     }
+    
+    
 }
 
 // Counter for cards
 class SapimanARView: ARView {
     var counter = 0
+    
 }
+
+
 
 extension SapimanARView {
     // Enable tap gesture for cards
@@ -106,6 +118,8 @@ extension SapimanARView {
         }
         print("Counter: \(counter)")
     }
+    
+    
 }
 
 struct ARViewRepresentable_Previews: PreviewProvider {

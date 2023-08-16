@@ -10,10 +10,13 @@ import SwiftUI
 @main
 struct MC3_FullAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject var arDelegate = ARDelegate()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+            
+//            ARViewRepresentable(arDelegate: arDelegate, theItem: 1)
         }
     }
 }
