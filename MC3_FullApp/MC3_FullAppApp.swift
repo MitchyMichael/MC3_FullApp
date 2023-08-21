@@ -14,9 +14,9 @@ struct MC3_FullAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
             
-//            ARViewRepresentable(arDelegate: arDelegate, theItem: 1)
+            ARViewRepresentable(arDelegate: arDelegate, theItem: 1)
         }
     }
 }

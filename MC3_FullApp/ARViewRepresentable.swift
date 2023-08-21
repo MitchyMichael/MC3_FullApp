@@ -49,8 +49,6 @@ class SapimanARView: ARView {
     
 }
 
-
-
 extension SapimanARView {
     // Enable tap gesture for cards
     func enableTapGesture(){

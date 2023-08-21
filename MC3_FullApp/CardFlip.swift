@@ -15,7 +15,17 @@ class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
     @objc var arView = SapimanARView(frame: .zero)
     
     var loadedModels: [ModelEntity] = []
-    var modelNameItems: [String] = ["sneaker_pegasustrail", "toy_biplane_idle", "toy_drummer_idle", "pie_lemon_meringue", "tv_retro", "fender_stratocaster", "gramophone", "flower_tulip"]
+    var modelNameItems: [String] = [
+        "sneaker_pegasustrail",
+        "toy_biplane_idle",
+        "toy_drummer_idle",
+        "pie_lemon_meringue",
+        "tv_retro",
+        "fender_stratocaster",
+        "gramophone",
+        "flower_tulip"
+    ]
+    
     var objectId: [String] = [String]()
     
     func startCardFlip(_ arView: ARView) {
@@ -99,11 +109,8 @@ class CardFlip: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
                     modelNames.append(modelEntity.name)
                 }
                 print("Model Names: \(loadedModels[0])")
-                
             })
     }
-    
-    
 }
 
 

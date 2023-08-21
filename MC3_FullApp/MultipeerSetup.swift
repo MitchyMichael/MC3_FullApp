@@ -9,28 +9,10 @@ import Foundation
 import MultipeerSession
 import ARKit
 import MultipeerConnectivity
+import RealityKit
 
-class MultipeerSetup: NSObject, ObservableObject, ARCoachingOverlayViewDelegate, MCSessionDelegate{
-    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        
-    }
-    
-    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        
-    }
-    
-    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-        
-    }
-    
-    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
-        
-    }
-    
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-        
-    }
-    
+class MultipeerSetup: NSObject, ObservableObject, ARCoachingOverlayViewDelegate {
+   
     @objc var arView :SapimanARView
     var multipeerSession: MultipeerSession?
     var sessionIDObservation: NSKeyValueObservation?
@@ -39,6 +21,7 @@ class MultipeerSetup: NSObject, ObservableObject, ARCoachingOverlayViewDelegate,
         super.init()
         
     }
+    
     func setupMultipeerSession() {
         print(self.arView.session.identifier)
         sessionIDObservation = observe(\.arView.session.identifier, options: [.new]) { object, change in
@@ -62,8 +45,31 @@ class MultipeerSetup: NSObject, ObservableObject, ARCoachingOverlayViewDelegate,
             peerLeftHandler: self.peerLeft,
             peerDiscoveredHandler: self.peerDiscovered
         )
-        
-        
+    }
+}
+
+extension MultipeerSetup: ARSessionDelegate {
+    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
+        for anchor in anchors {
+//            if let anchorName = anchor.name, anchorName == "LaserRed" {
+//                placeObject(named: anchorName, for: anchor)
+//            }
+//
+            if let participantAnchor = anchor as? ARParticipantAnchor {
+                print("Successfully connected with another user!")
+
+                let anchorEntity = AnchorEntity(anchor: participantAnchor)
+
+                let mesh = MeshResource.generateSphere(radius: 0.03)
+                let color = UIColor .red
+                let material = SimpleMaterial(color: color, isMetallic: false)
+                let coloredSphere = ModelEntity(mesh: mesh, materials: [material])
+
+                anchorEntity.addChild(coloredSphere)
+
+                arView.scene.addAnchor(anchorEntity)
+            }
+        }
     }
 }
 
