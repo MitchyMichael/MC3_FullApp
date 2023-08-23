@@ -16,6 +16,7 @@ struct ARViewRepresentable: UIViewRepresentable {
     @StateObject var cardFlip = CardFlip()
     var theItem: Int
     
+    
     func makeUIView(context: Context) -> some SapimanARView {
         let arView = SapimanARView(frame: .zero)
         
@@ -40,13 +41,13 @@ struct ARViewRepresentable: UIViewRepresentable {
         
     }
     
-    
 }
 
 // Counter for cards
 class SapimanARView: ARView {
     var counter = 0
-    
+    var checkCondition = false
+    var arrayCheckCard:[String] = []
 }
 
 extension SapimanARView {
@@ -67,9 +68,22 @@ extension SapimanARView {
                 childCardFlip()
             }
             
+            func checkCard() {
+                if arrayCheckCard[0] == arrayCheckCard [1] {
+                    checkCondition = true
+                    print(arrayCheckCard[0])
+                    print(arrayCheckCard[1])
+                    print("checkCondition = true")
+                } else {
+                    checkCondition = false
+                    print(arrayCheckCard[0])
+                    print(arrayCheckCard[1])
+                    print("checkCondition = false")
+                }
+            }
+            
             func parentCardFlip() {
                 if card.transform.rotation.angle == .pi {
-                    
                     // Function that only 2 cards can be open
                     if counter < 2 {
                         print("Card Name:\(card.children.first!.name)")
@@ -78,15 +92,35 @@ extension SapimanARView {
                         card.move(to: flipDownTransform, relativeTo: card.parent, duration:0.25, timingFunction: .easeInOut)
                         print("Up")
                         counter = counter + 1
+                        arrayCheckCard.append(card.children.first!.name)
+                        
                     } else if counter <= 0 {
                         counter = 0
                     }
+                    if counter == 2 {
+                        checkCard()
+                        
+                        //print(arrayCheckCard[counter])
+                        
+                        // Check if card is the same
+                        if checkCondition == true {
+                            // Nambah skor
+                            
+                        }
+                    }
+                    
+                    
+                    
                 } else {
                     var flipUpTransform = card.transform
                     flipUpTransform.rotation = simd_quatf(angle: .pi, axis: [1, 0, 0])
                     card.move(to: flipUpTransform, relativeTo: card.parent, duration:0.25, timingFunction: .easeInOut)
                     counter = counter - 1
+                    checkCondition = false
                     print("Down")
+                    
+                    arrayCheckCard.removeAll(where: {$0 == card.children.first!.name})
+                    //                    let _ = print(arrayCheckCard[counter])
                 }
             }
             
@@ -104,12 +138,25 @@ extension SapimanARView {
                         } else if counter <= 0 {
                             counter = 0
                         }
+                        
+                        if counter == 2 {
+                            checkCard()
+                            
+                            //print(arrayCheckCard[counter])
+                            
+                            // Check if card is the same
+                            if checkCondition == true {
+                                // Nambah skor
+                                
+                            }
+                        }
                     } else {
                         var flipUpTransform = parent.transform
                         flipUpTransform.rotation = simd_quatf(angle: .pi, axis: [1, 0, 0])
                         parent.move(to: flipUpTransform, relativeTo: parent.parent, duration:0.25, timingFunction: .easeInOut)
                         print("Down")
                         counter = counter - 1
+                        
                     }
                 }
             }
